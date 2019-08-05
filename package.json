@@ -1,0 +1,27 @@
+{
+  "name": "node-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arturtarasov/node-express.git"
+  },
+  "author": "Artur Tarasov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arturtarasov/node-express/issues"
+  },
+  "homepage": "https://github.com/arturtarasov/node-express#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
