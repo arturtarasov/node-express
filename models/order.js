@@ -1,4 +1,4 @@
-const {Schema, model} = require('mongoose')
+const {Schema, model} = require('mongoose');
 
 const orderSchema = new Schema({
   courses: [
@@ -25,7 +25,7 @@ const orderSchema = new Schema({
     type: Date,
     default: Date.now
   }
-})
+});
 
 
-module.exports = model('Order', orderSchema)
+module.exports = model('Order', orderSchema);
