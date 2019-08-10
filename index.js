@@ -1,5 +1,7 @@
 const express = require('express');
 const path = require('path');
+const csrf = require('csurf');
+const flash = require('connect-flash');
 const mongoose = require('mongoose');
 const exphbs = require('express-handlebars');
 const session = require('express-session');
@@ -39,6 +41,8 @@ app.use(session({
   saveUninitialized: false,
   store
 }));
+app.use(csrf());
+app.use(flash());
 app.use(varMiddleware);
 app.use(userMiddleware);
 
