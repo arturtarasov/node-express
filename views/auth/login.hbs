@@ -10,6 +10,9 @@
             {{#if loginError}}
                 <p class="alert">{{loginError}}</p>
             {{/if}}
+            {{#if passwordSave}}
+                <p class="great">{{passwordSave}}</p>
+            {{/if}}
             <h1>Войти в магазин</h1>
             <form action="/auth/login" method="POST">
                 <div class="input-field">
