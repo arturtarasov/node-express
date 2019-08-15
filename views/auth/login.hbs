@@ -38,7 +38,7 @@
                 <p class="alert">{{registrError}}</p>
             {{/if}}
             <h1>Создать аккаунт</h1>
-            <form action="/auth/registr" method="POST">
+            <form action="/auth/registr" method="POST" novalidate>
                 <div class="input-field">
                     <input id="remail" name="email" type="email" class="validate" required>
                     <label for="remail">Email</label>

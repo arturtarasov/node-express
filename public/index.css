@@ -63,6 +63,11 @@ a .material-icons {
   font-size: 40px;
 }
 
+.avatar {
+  max-width: 100%;
+  height: auto;
+}
+
 /* menu */
 @media only screen and (max-width: 580px) {
   .menu-dekstop {
