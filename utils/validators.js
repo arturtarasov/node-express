@@ -33,6 +33,15 @@ exports.registerValidators = [
         .trim()
 ];
 
+exports.loginValidators = [
+    body('email')
+        .isEmail().withMessage('Введите корректный email')
+        .normalizeEmail(),
+    body('password', 'Пароль должен быть минимум 6 символов')
+        .isLength({min: 6, max: 56})
+        .isAlphanumeric()
+        .trim(),
+];
 exports.courseValidators = [
     body('title').isLength({min: 3}).withMessage('Минимальная длина названия 3 символа').trim(),
     body('price').isNumeric().withMessage('Введите корректную цену'),

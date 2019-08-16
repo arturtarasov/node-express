@@ -9,7 +9,7 @@ const User = require('../models/user');
 const keys = require('../keys');
 const reqEmail = require('../emails/registration');
 const resetEmail = require('../emails/reset');
-const { registerValidators } = require('../utils/validators');
+const { registerValidators, loginValidators } = require('../utils/validators');
 
 
 const transporter = nodemailer.createTransport(sendgrid({
@@ -31,9 +31,15 @@ router.get('/logout', async (req, res) => {
     });
 });
 
-router.post('/login', async (req, res) => {
+router.post('/login', loginValidators, async (req, res) => {
     try {
         const {email, password} = req.body;
+
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            req.flash('loginError', errors.array()[0].msg);
+            return res.status(422).redirect('/auth/login#login');
+        }
 
         const candidate = await User.findOne({email});
 
